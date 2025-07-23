@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tech Stack Features</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .button-container {
+    margin-bottom: 20px;
+  }
+  button.tech-btn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button.tech-btn:hover {
+    background-color: #0056b3;
+  }
+  ul.features-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Tech Stack Features</h1>
+
+<div class="button-container">
+  <button class="tech-btn" onclick="showFeatures('html')">HTML5</button>
+  <button class="tech-btn" onclick="showFeatures('css')">CSS3</button>
+  <button class="tech-btn" onclick="showFeatures('tailwind')">Tailwind CSS</button>
+  <button class="tech-btn" onclick="showFeatures('js')">JavaScript</button>
+  <button class="tech-btn" onclick="showFeatures('jquery')">jQuery</button>
+  <button class="tech-btn" onclick="showFeatures('php')">PHP</button>
+  <button class="tech-btn" onclick="showFeatures('mysql')">MySQL</button>
+</div>
+
+<h2>Features</h2>
+<ul id="featuresList" class="features-list">
+  <li>Select a tech stack button to see features.</li>
+</ul>
+
+<script>
+  const featuresData = {
+    html: [
+      "Semantic markup for better SEO and accessibility.",
+      "Responsive layouts with modern HTML5 elements."
+    ],
+    css: [
+      "Styling with CSS3 including animations and transitions.",
+      "Flexbox and Grid layouts for responsive design."
+    ],
+    tailwind: [
+      "Utility-first CSS framework for rapid UI development.",
+      "Responsive and customizable design system."
+    ],
+    js: [
+      "Client-side scripting for dynamic content.",
+      "Event handling and DOM manipulation."
+    ],
+    jquery: [
+      "Simplified JavaScript with easy DOM traversal.",
+      "AJAX support for asynchronous data loading."
+    ],
+    php: [
+      "Server-side scripting for dynamic web pages.",
+      "Database interaction and session management."
+    ],
+    mysql: [
+      "Relational database management system.",
+      "Efficient data storage and retrieval."
+    ]
+  };
+
+  function showFeatures(tech) {
+    const list = document.getElementById('featuresList');
+    list.innerHTML = '';
+    if (featuresData[tech]) {
+      featuresData[tech].forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        list.appendChild(li);
+      });
+    } else {
+      list.innerHTML = '<li>No features available.</li>';
+    }
+  }
+</script>
+
+</body>
+</html>
